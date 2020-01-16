@@ -16,6 +16,7 @@
 		DF98BA8D23CFEE9000DBBF8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF98BA8B23CFEE9000DBBF8E /* LaunchScreen.storyboard */; };
 		DF98BA9823CFEE9100DBBF8E /* jumboChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF98BA9723CFEE9100DBBF8E /* jumboChallengeTests.swift */; };
 		DF98BAA323CFEE9100DBBF8E /* jumboChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF98BAA223CFEE9100DBBF8E /* jumboChallengeUITests.swift */; };
+		DF98BAB123D009DF00DBBF8E /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = DF98BAB023D009DF00DBBF8E /* index.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		DF98BA9E23CFEE9100DBBF8E /* jumboChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jumboChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF98BAA223CFEE9100DBBF8E /* jumboChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jumboChallengeUITests.swift; sourceTree = "<group>"; };
 		DF98BAA423CFEE9100DBBF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF98BAB023D009DF00DBBF8E /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				DF98BA8B23CFEE9000DBBF8E /* LaunchScreen.storyboard */,
 				DF98BA8E23CFEE9000DBBF8E /* Info.plist */,
 				DF98BA8623CFEE8F00DBBF8E /* jumboChallenge.xcdatamodeld */,
+				DF98BAB023D009DF00DBBF8E /* index.html */,
 			);
 			path = jumboChallenge;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF98BA8D23CFEE9000DBBF8E /* LaunchScreen.storyboard in Resources */,
+				DF98BAB123D009DF00DBBF8E /* index.html in Resources */,
 				DF98BA8A23CFEE9000DBBF8E /* Assets.xcassets in Resources */,
 				DF98BA8523CFEE8F00DBBF8E /* Main.storyboard in Resources */,
 			);
