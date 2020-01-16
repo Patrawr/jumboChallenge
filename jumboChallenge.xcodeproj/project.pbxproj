@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DF98BA7E23CFEE8F00DBBF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF98BA7D23CFEE8F00DBBF8E /* AppDelegate.swift */; };
+		DF98BA8023CFEE8F00DBBF8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF98BA7F23CFEE8F00DBBF8E /* SceneDelegate.swift */; };
+		DF98BA8223CFEE8F00DBBF8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF98BA8123CFEE8F00DBBF8E /* ViewController.swift */; };
+		DF98BA8523CFEE8F00DBBF8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF98BA8323CFEE8F00DBBF8E /* Main.storyboard */; };
+		DF98BA8823CFEE8F00DBBF8E /* jumboChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF98BA8623CFEE8F00DBBF8E /* jumboChallenge.xcdatamodeld */; };
+		DF98BA8A23CFEE9000DBBF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF98BA8923CFEE9000DBBF8E /* Assets.xcassets */; };
+		DF98BA8D23CFEE9000DBBF8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF98BA8B23CFEE9000DBBF8E /* LaunchScreen.storyboard */; };
+		DF98BA9823CFEE9100DBBF8E /* jumboChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF98BA9723CFEE9100DBBF8E /* jumboChallengeTests.swift */; };
+		DF98BAA323CFEE9100DBBF8E /* jumboChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF98BAA223CFEE9100DBBF8E /* jumboChallengeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DF98BA9423CFEE9100DBBF8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF98BA7223CFEE8F00DBBF8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF98BA7923CFEE8F00DBBF8E;
+			remoteInfo = jumboChallenge;
+		};
+		DF98BA9F23CFEE9100DBBF8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF98BA7223CFEE8F00DBBF8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF98BA7923CFEE8F00DBBF8E;
+			remoteInfo = jumboChallenge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DF98BA7A23CFEE8F00DBBF8E /* jumboChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jumboChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF98BA7D23CFEE8F00DBBF8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DF98BA7F23CFEE8F00DBBF8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DF98BA8123CFEE8F00DBBF8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DF98BA8423CFEE8F00DBBF8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DF98BA8723CFEE8F00DBBF8E /* jumboChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = jumboChallenge.xcdatamodel; sourceTree = "<group>"; };
+		DF98BA8923CFEE9000DBBF8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DF98BA8C23CFEE9000DBBF8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DF98BA8E23CFEE9000DBBF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF98BA9323CFEE9100DBBF8E /* jumboChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jumboChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF98BA9723CFEE9100DBBF8E /* jumboChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jumboChallengeTests.swift; sourceTree = "<group>"; };
+		DF98BA9923CFEE9100DBBF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF98BA9E23CFEE9100DBBF8E /* jumboChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jumboChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF98BAA223CFEE9100DBBF8E /* jumboChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jumboChallengeUITests.swift; sourceTree = "<group>"; };
+		DF98BAA423CFEE9100DBBF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DF98BA7723CFEE8F00DBBF8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF98BA9023CFEE9100DBBF8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF98BA9B23CFEE9100DBBF8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DF98BA7123CFEE8F00DBBF8E = {
+			isa = PBXGroup;
+			children = (
+				DF98BA7C23CFEE8F00DBBF8E /* jumboChallenge */,
+				DF98BA9623CFEE9100DBBF8E /* jumboChallengeTests */,
+				DF98BAA123CFEE9100DBBF8E /* jumboChallengeUITests */,
+				DF98BA7B23CFEE8F00DBBF8E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DF98BA7B23CFEE8F00DBBF8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DF98BA7A23CFEE8F00DBBF8E /* jumboChallenge.app */,
+				DF98BA9323CFEE9100DBBF8E /* jumboChallengeTests.xctest */,
+				DF98BA9E23CFEE9100DBBF8E /* jumboChallengeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF98BA7C23CFEE8F00DBBF8E /* jumboChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				DF98BA7D23CFEE8F00DBBF8E /* AppDelegate.swift */,
+				DF98BA7F23CFEE8F00DBBF8E /* SceneDelegate.swift */,
+				DF98BA8123CFEE8F00DBBF8E /* ViewController.swift */,
+				DF98BA8323CFEE8F00DBBF8E /* Main.storyboard */,
+				DF98BA8923CFEE9000DBBF8E /* Assets.xcassets */,
+				DF98BA8B23CFEE9000DBBF8E /* LaunchScreen.storyboard */,
+				DF98BA8E23CFEE9000DBBF8E /* Info.plist */,
+				DF98BA8623CFEE8F00DBBF8E /* jumboChallenge.xcdatamodeld */,
+			);
+			path = jumboChallenge;
+			sourceTree = "<group>";
+		};
+		DF98BA9623CFEE9100DBBF8E /* jumboChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				DF98BA9723CFEE9100DBBF8E /* jumboChallengeTests.swift */,
+				DF98BA9923CFEE9100DBBF8E /* Info.plist */,
+			);
+			path = jumboChallengeTests;
+			sourceTree = "<group>";
+		};
+		DF98BAA123CFEE9100DBBF8E /* jumboChallengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DF98BAA223CFEE9100DBBF8E /* jumboChallengeUITests.swift */,
+				DF98BAA423CFEE9100DBBF8E /* Info.plist */,
+			);
+			path = jumboChallengeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DF98BA7923CFEE8F00DBBF8E /* jumboChallenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF98BAA723CFEE9100DBBF8E /* Build configuration list for PBXNativeTarget "jumboChallenge" */;
+			buildPhases = (
+				DF98BA7623CFEE8F00DBBF8E /* Sources */,
+				DF98BA7723CFEE8F00DBBF8E /* Frameworks */,
+				DF98BA7823CFEE8F00DBBF8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = jumboChallenge;
+			productName = jumboChallenge;
+			productReference = DF98BA7A23CFEE8F00DBBF8E /* jumboChallenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DF98BA9223CFEE9100DBBF8E /* jumboChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF98BAAA23CFEE9100DBBF8E /* Build configuration list for PBXNativeTarget "jumboChallengeTests" */;
+			buildPhases = (
+				DF98BA8F23CFEE9100DBBF8E /* Sources */,
+				DF98BA9023CFEE9100DBBF8E /* Frameworks */,
+				DF98BA9123CFEE9100DBBF8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DF98BA9523CFEE9100DBBF8E /* PBXTargetDependency */,
+			);
+			name = jumboChallengeTests;
+			productName = jumboChallengeTests;
+			productReference = DF98BA9323CFEE9100DBBF8E /* jumboChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DF98BA9D23CFEE9100DBBF8E /* jumboChallengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF98BAAD23CFEE9100DBBF8E /* Build configuration list for PBXNativeTarget "jumboChallengeUITests" */;
+			buildPhases = (
+				DF98BA9A23CFEE9100DBBF8E /* Sources */,
+				DF98BA9B23CFEE9100DBBF8E /* Frameworks */,
+				DF98BA9C23CFEE9100DBBF8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DF98BAA023CFEE9100DBBF8E /* PBXTargetDependency */,
+			);
+			name = jumboChallengeUITests;
+			productName = jumboChallengeUITests;
+			productReference = DF98BA9E23CFEE9100DBBF8E /* jumboChallengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DF98BA7223CFEE8F00DBBF8E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Patrick Wawrzoszek";
+				TargetAttributes = {
+					DF98BA7923CFEE8F00DBBF8E = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					DF98BA9223CFEE9100DBBF8E = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = DF98BA7923CFEE8F00DBBF8E;
+					};
+					DF98BA9D23CFEE9100DBBF8E = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = DF98BA7923CFEE8F00DBBF8E;
+					};
+				};
+			};
+			buildConfigurationList = DF98BA7523CFEE8F00DBBF8E /* Build configuration list for PBXProject "jumboChallenge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DF98BA7123CFEE8F00DBBF8E;
+			productRefGroup = DF98BA7B23CFEE8F00DBBF8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DF98BA7923CFEE8F00DBBF8E /* jumboChallenge */,
+				DF98BA9223CFEE9100DBBF8E /* jumboChallengeTests */,
+				DF98BA9D23CFEE9100DBBF8E /* jumboChallengeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DF98BA7823CFEE8F00DBBF8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF98BA8D23CFEE9000DBBF8E /* LaunchScreen.storyboard in Resources */,
+				DF98BA8A23CFEE9000DBBF8E /* Assets.xcassets in Resources */,
+				DF98BA8523CFEE8F00DBBF8E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF98BA9123CFEE9100DBBF8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF98BA9C23CFEE9100DBBF8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DF98BA7623CFEE8F00DBBF8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF98BA8223CFEE8F00DBBF8E /* ViewController.swift in Sources */,
+				DF98BA7E23CFEE8F00DBBF8E /* AppDelegate.swift in Sources */,
+				DF98BA8023CFEE8F00DBBF8E /* SceneDelegate.swift in Sources */,
+				DF98BA8823CFEE8F00DBBF8E /* jumboChallenge.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF98BA8F23CFEE9100DBBF8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF98BA9823CFEE9100DBBF8E /* jumboChallengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF98BA9A23CFEE9100DBBF8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF98BAA323CFEE9100DBBF8E /* jumboChallengeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DF98BA9523CFEE9100DBBF8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF98BA7923CFEE8F00DBBF8E /* jumboChallenge */;
+			targetProxy = DF98BA9423CFEE9100DBBF8E /* PBXContainerItemProxy */;
+		};
+		DF98BAA023CFEE9100DBBF8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF98BA7923CFEE8F00DBBF8E /* jumboChallenge */;
+			targetProxy = DF98BA9F23CFEE9100DBBF8E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DF98BA8323CFEE8F00DBBF8E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF98BA8423CFEE8F00DBBF8E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DF98BA8B23CFEE9000DBBF8E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF98BA8C23CFEE9000DBBF8E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DF98BAA523CFEE9100DBBF8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DF98BAA623CFEE9100DBBF8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DF98BAA823CFEE9100DBBF8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = jumboChallenge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = patrickw.jumboChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DF98BAA923CFEE9100DBBF8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = jumboChallenge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = patrickw.jumboChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DF98BAAB23CFEE9100DBBF8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = jumboChallengeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = patrickw.jumboChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jumboChallenge.app/jumboChallenge";
+			};
+			name = Debug;
+		};
+		DF98BAAC23CFEE9100DBBF8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = jumboChallengeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = patrickw.jumboChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jumboChallenge.app/jumboChallenge";
+			};
+			name = Release;
+		};
+		DF98BAAE23CFEE9100DBBF8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = jumboChallengeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = patrickw.jumboChallengeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = jumboChallenge;
+			};
+			name = Debug;
+		};
+		DF98BAAF23CFEE9100DBBF8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = jumboChallengeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = patrickw.jumboChallengeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = jumboChallenge;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DF98BA7523CFEE8F00DBBF8E /* Build configuration list for PBXProject "jumboChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF98BAA523CFEE9100DBBF8E /* Debug */,
+				DF98BAA623CFEE9100DBBF8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF98BAA723CFEE9100DBBF8E /* Build configuration list for PBXNativeTarget "jumboChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF98BAA823CFEE9100DBBF8E /* Debug */,
+				DF98BAA923CFEE9100DBBF8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF98BAAA23CFEE9100DBBF8E /* Build configuration list for PBXNativeTarget "jumboChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF98BAAB23CFEE9100DBBF8E /* Debug */,
+				DF98BAAC23CFEE9100DBBF8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF98BAAD23CFEE9100DBBF8E /* Build configuration list for PBXNativeTarget "jumboChallengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF98BAAE23CFEE9100DBBF8E /* Debug */,
+				DF98BAAF23CFEE9100DBBF8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DF98BA8623CFEE8F00DBBF8E /* jumboChallenge.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DF98BA8723CFEE8F00DBBF8E /* jumboChallenge.xcdatamodel */,
+			);
+			currentVersion = DF98BA8723CFEE8F00DBBF8E /* jumboChallenge.xcdatamodel */;
+			path = jumboChallenge.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DF98BA7223CFEE8F00DBBF8E /* Project object */;
+}
