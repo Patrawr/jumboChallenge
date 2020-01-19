@@ -25,6 +25,7 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         setupWebView()
         operationsTableView.delegate = self
         operationsTableView.dataSource = self
+        loadSampleOperations()
     }
     
     
@@ -66,7 +67,7 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
     }
     
     func loadSampleOperations() {
-        guard let sampleOperation = Operation(name: "abc", progress: 50.0, state: "in progress") else {
+        guard let sampleOperation = Operation(name: "abc", progress: 0.5, state: "in progress") else {
             fatalError("Unable to instantiate sample operations")
         }
         
@@ -84,14 +85,14 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         webView.loadFileURL(html, allowingReadAccessTo: url)
     }
     
-    func startOperation() {
-    }
     
     //MARK: Action Methods
     @IBAction func jsTriggerTest(_ sender: UIButton) {
         webView.evaluateJavaScript("startOperation('abc')", completionHandler: nil)
-        startOperation()
-        loadSampleOperations()
+        
+        var updateRow = 0
+        operations[updateRow].progress += 0.1
+        operationsTableView.reloadRows(at: [IndexPath(row: updateRow, section: 0)], with: .automatic )
     }
     
     

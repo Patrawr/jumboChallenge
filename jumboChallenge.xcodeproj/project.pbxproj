@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DF4DD85F23D3BBFD0088B381 /* MessageProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4DD85E23D3BBFD0088B381 /* MessageProgressTableViewCell.swift */; };
 		DF4DD86123D3C2C90088B381 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4DD86023D3C2C90088B381 /* Operation.swift */; };
+		DF4DD86723D4ED740088B381 /* OperationsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4DD86623D4ED740088B381 /* OperationsHandler.swift */; };
 		DF98BA7E23CFEE8F00DBBF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF98BA7D23CFEE8F00DBBF8E /* AppDelegate.swift */; };
 		DF98BA8023CFEE8F00DBBF8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF98BA7F23CFEE8F00DBBF8E /* SceneDelegate.swift */; };
 		DF98BA8223CFEE8F00DBBF8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF98BA8123CFEE8F00DBBF8E /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		DF4DD85E23D3BBFD0088B381 /* MessageProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageProgressTableViewCell.swift; sourceTree = "<group>"; };
 		DF4DD86023D3C2C90088B381 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		DF4DD86623D4ED740088B381 /* OperationsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsHandler.swift; sourceTree = "<group>"; };
 		DF98BA7A23CFEE8F00DBBF8E /* jumboChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jumboChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF98BA7D23CFEE8F00DBBF8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF98BA7F23CFEE8F00DBBF8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				DF98BA7D23CFEE8F00DBBF8E /* AppDelegate.swift */,
 				DF98BA7F23CFEE8F00DBBF8E /* SceneDelegate.swift */,
 				DF98BA8123CFEE8F00DBBF8E /* ViewController.swift */,
+				DF4DD86623D4ED740088B381 /* OperationsHandler.swift */,
 				DF4DD86023D3C2C90088B381 /* Operation.swift */,
 				DF98BA8323CFEE8F00DBBF8E /* Main.storyboard */,
 				DF4DD85E23D3BBFD0088B381 /* MessageProgressTableViewCell.swift */,
@@ -274,6 +277,7 @@
 			files = (
 				DF98BA8223CFEE8F00DBBF8E /* ViewController.swift in Sources */,
 				DF4DD85F23D3BBFD0088B381 /* MessageProgressTableViewCell.swift in Sources */,
+				DF4DD86723D4ED740088B381 /* OperationsHandler.swift in Sources */,
 				DF98BA7E23CFEE8F00DBBF8E /* AppDelegate.swift in Sources */,
 				DF98BA8023CFEE8F00DBBF8E /* SceneDelegate.swift in Sources */,
 				DF98BA8823CFEE8F00DBBF8E /* jumboChallenge.xcdatamodeld in Sources */,
