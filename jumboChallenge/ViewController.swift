@@ -23,7 +23,6 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         super.viewDidLoad()
         
         setupWebView()
-        loadSampleOperations()
         operationsTableView.delegate = self
         operationsTableView.dataSource = self
     }
@@ -71,7 +70,9 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
             fatalError("Unable to instantiate sample operations")
         }
         
-        operations += [sampleOperation]
+        let newIndexPath = IndexPath(row: operations.count, section: 0)
+        operations.append(sampleOperation)
+        operationsTableView.insertRows(at: [newIndexPath], with: .automatic)
     }
     
     //MARK: Custom Functions
