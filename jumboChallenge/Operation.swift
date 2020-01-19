@@ -24,10 +24,6 @@ class Operation {
             return nil
         }
         
-        guard !state.isEmpty else {
-            return nil
-        }
-        
         self.name = name
         self.progress = progress
         self.state = state

@@ -15,4 +15,19 @@ class OperationsHandler {
     init () {
         self.operations = [Operation]()
     }
+    
+    func handleMessage(message: Any) {
+        print(message)
+    }
+    
+    func startOperation(id: String) -> IndexPath {
+        guard let newOperation = Operation(name: id, progress: 0, state: "") else {
+            fatalError("Starting new operation with id \(id) failed")
+        }
+        
+        let newIndexPath = IndexPath(row: operations.count, section: 0)
+        operations.append(newOperation)
+        
+        return newIndexPath
+    }
 }

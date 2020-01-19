@@ -13,9 +13,7 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
     //MARK: Properties
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var operationsTableView: UITableView!
-    
-    
-    var operations = [Operation]()
+    var opHandler = OperationsHandler()
     
     
     //MARK: Setup
@@ -28,11 +26,19 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         loadSampleOperations()
     }
     
+    func setupWebView() {
+        webView.configuration.userContentController.add(self, name: "jumbo")
+        // Loading HTML from bundle
+        let url = Bundle.main.resourceURL!.absoluteURL
+        let html = url.appendingPathComponent("index.html")
+        webView.loadFileURL(html, allowingReadAccessTo: url)
+    }
+    
     
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "jumbo" {
-            print(message.body)
+            opHandler.handleMessage(message: message.body)
         }
     }
     
@@ -42,7 +48,7 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return operations.count
+        return opHandler.operations.count
     }
     
     
@@ -57,41 +63,46 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         }
         
         // Fetches the appropriate operation to update the cell with
-        let operation = operations[indexPath.row]
-        cell.messageNameLabel.text = operation.name
+        let operation = opHandler.operations[indexPath.row]
+        cell.messageNameLabel.text = "Message: \(operation.name)"
         cell.operationProgressView.progress = operation.progress
-        cell.operationStateLabel.text = operation.state
+        cell.operationStateLabel.text = "State: \(operation.state)"
         
         
         return cell
     }
     
-    func loadSampleOperations() {
-        guard let sampleOperation = Operation(name: "abc", progress: 0.5, state: "in progress") else {
-            fatalError("Unable to instantiate sample operations")
-        }
-        
-        let newIndexPath = IndexPath(row: operations.count, section: 0)
-        operations.append(sampleOperation)
-        operationsTableView.insertRows(at: [newIndexPath], with: .automatic)
-    }
     
     //MARK: Custom Functions
-    func setupWebView() {
-        webView.configuration.userContentController.add(self, name: "jumbo")
-        // Loading HTML from bundle
-        let url = Bundle.main.resourceURL!.absoluteURL
-        let html = url.appendingPathComponent("index.html")
-        webView.loadFileURL(html, allowingReadAccessTo: url)
+    func loadSampleOperations() {
+           guard let sampleOperation = Operation(name: "abc", progress: 0.5, state: "in progress") else {
+               fatalError("Unable to instantiate sample operations")
+           }
+           
+           let newIndexPath = IndexPath(row: opHandler.operations.count, section: 0)
+           opHandler.operations.append(sampleOperation)
+           operationsTableView.insertRows(at: [newIndexPath], with: .automatic)
+       }
+    
+    
+    // Will create a new operation in the operation Handler's array and call
+    // startOperation() JS function to start messages
+    func startNewOperation(id : String) {
+        let opID = String(Int.random(in: 0..<1000000))
+        
+        let newIndexPath = opHandler.startOperation(id: opID)
+        operationsTableView.insertRows(at: [newIndexPath], with: .automatic)
+        
+        webView.evaluateJavaScript("startOperation(\(opID))", completionHandler: nil)
     }
     
     
     //MARK: Action Methods
     @IBAction func jsTriggerTest(_ sender: UIButton) {
-        webView.evaluateJavaScript("startOperation('abc')", completionHandler: nil)
+        startNewOperation(id: "test")
         
         var updateRow = 0
-        operations[updateRow].progress += 0.1
+        opHandler.operations[updateRow].progress += 0.1
         operationsTableView.reloadRows(at: [IndexPath(row: updateRow, section: 0)], with: .automatic )
     }
     
