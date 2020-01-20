@@ -88,18 +88,18 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
     // Will create a new operation in the operation Handler's array and call
     // startOperation() JS function to start messages
     func startNewOperation(id : String) {
-        let opID = String(Int.random(in: 0..<1000000))
-        
-        let newIndexPath = opHandler.startOperation(id: opID)
+        let newIndexPath = opHandler.startOperation(id: id)
         operationsTableView.insertRows(at: [newIndexPath], with: .automatic)
         
-        webView.evaluateJavaScript("startOperation(\(opID))", completionHandler: nil)
+        webView.evaluateJavaScript("startOperation('\(id)')", completionHandler: nil)
     }
     
     
     //MARK: Action Methods
     @IBAction func jsTriggerTest(_ sender: UIButton) {
-        startNewOperation(id: "test")
+        var opID = String(Int.random(in: 0..<1000000))
+        opID = opID + "jmb"
+        startNewOperation(id: opID)
         
         var updateRow = 0
         opHandler.operations[updateRow].progress += 0.1
