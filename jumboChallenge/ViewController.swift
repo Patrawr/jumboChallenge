@@ -70,7 +70,7 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         let operation = opHandler.operations[indexPath.row]
         cell.messageNameLabel.text = "Message: \(operation.name)"
         cell.operationProgressView.progress = operation.progress
-        cell.operationStateLabel.text = "State: \(operation.state)"
+        cell.operationStateLabel.text = operation.state
         
         
         return cell

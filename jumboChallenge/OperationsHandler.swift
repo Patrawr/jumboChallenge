@@ -42,10 +42,23 @@ class OperationsHandler {
         if messageTypeStr == "progress" {
             let newProgress : Float = message["progress"] as! Float
             operations[opIndex].progress = newProgress / 100.0
+            operations[opIndex].state = "In Progress..."
         }
-        else if messageTypeStr == "completed" {
             
+        else if messageTypeStr == "completed" {
+            let stateStr : String = message["state"] as! String
+            
+            if stateStr == "success" {
+                // We've completed successfully so set progressView to 100%
+                operations[opIndex].progress = 1.0
+                operations[opIndex].state = "✅"
+            }
+                
+            else if stateStr == "error" {
+                operations[opIndex].state = "❌"
+            }
         }
+            
         else {
             print("Invalid message type")
             return
