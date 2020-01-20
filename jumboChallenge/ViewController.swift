@@ -23,8 +23,20 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         setupWebView()
         operationsTableView.delegate = self
         operationsTableView.dataSource = self
-        loadSampleOperations()
     }
+    
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        perform(#selector(startNewOperation), with: nil, afterDelay: 0.5)
+        perform(#selector(startNewOperation), with: nil, afterDelay: 0.5)
+        perform(#selector(startNewOperation), with: nil, afterDelay: 0.6)
+        perform(#selector(startNewOperation), with: nil, afterDelay: 0.6)
+        perform(#selector(startNewOperation), with: nil, afterDelay: 0.7)
+        perform(#selector(startNewOperation), with: nil, afterDelay: 0.7)
+    }
+    
+    
     
     func setupWebView() {
         webView.configuration.userContentController.add(self, name: "jumbo")
@@ -78,20 +90,16 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
     
     
     //MARK: Custom Functions
-    func loadSampleOperations() {
-           guard let sampleOperation = Operation(name: "abc", progress: 0.5, state: "in progress") else {
-               fatalError("Unable to instantiate sample operations")
-           }
-           
-           let newIndexPath = IndexPath(row: opHandler.operations.count, section: 0)
-           opHandler.operations.append(sampleOperation)
-           operationsTableView.insertRows(at: [newIndexPath], with: .automatic)
-       }
-    
-    
+  
     // Will create a new operation in the operation Handler's array and call
     // startOperation() JS function to start messages
-    func startNewOperation(id : String) {
+    @objc func startNewOperation() {
+        //generating a random string operation ID
+        var id = String(Int.random(in: 0..<1000000))
+        id = id + "jmb"
+        
+        // Getting indexPath returned from startOperation and using it to insert a new row
+        // into the table
         let newIndexPath = opHandler.startOperation(id: id)
         operationsTableView.insertRows(at: [newIndexPath], with: .automatic)
         
@@ -103,10 +111,7 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
     @IBAction func jsTriggerTest(_ sender: UIButton) {
         var opID = String(Int.random(in: 0..<1000000))
         opID = opID + "jmb"
-        startNewOperation(id: opID)
-        
-        var updateRow = 0
-        operationsTableView.reloadRows(at: [IndexPath(row: updateRow, section: 0)], with: .automatic )
+        startNewOperation()
     }
     
     
