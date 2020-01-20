@@ -46,7 +46,8 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
     }
     
     
-    
+    // Register this class as a message handler being able to receive js messages with the schema
+    // "jumbo"
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "jumbo" {
             //call message handler to modify data model, based on message
