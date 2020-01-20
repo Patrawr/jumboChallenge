@@ -20,7 +20,7 @@ class Operation {
             return nil
         }
         
-        guard progress >= 0 else {
+        guard progress >= 0 && progress <= 1 else {
             return nil
         }
         

@@ -10,22 +10,50 @@ import Foundation
 
 // Will handle business logic of starting and updating operations
 class OperationsHandler {
+    //MARK: Properties
     var operations: [Operation]
     
+    //MARK: Setup
     init () {
         self.operations = [Operation]()
     }
     
-    func handleMessage(message: Any) {
+    
+    //MARK: Custom Methods
+    func handleMessage(message: Any) -> IndexPath {
         print(message)
         
         let messageDict = convertMessageToDict(messageObject: message)
         let operationIndex = findOperationIndex(messageId: messageDict["id"])
+        parseMessageType(message: messageDict, opIndex: operationIndex)
         
-        print("Object with id \(messageDict["id"]) found at index \(operationIndex)")
+        let newIndexPath = IndexPath(row: operationIndex, section: 0)
+        
+        return newIndexPath
     }
     
-    func convertMessageToDict(messageObject: Any) -> Dictionary <String, Any> {
+    // Will parse key message to determine what type of message it is, i.e. "progress, completed"
+    private func parseMessageType(message: [String: Any?], opIndex: Int) {
+        // Casting any? optional to useable string
+        let messageTypeStr: String = message["message"] as! String
+        print("Message Type: \(messageTypeStr)")
+        
+        // Calculate new progress as a float for uiProgressView
+        if messageTypeStr == "progress" {
+            let newProgress : Float = message["progress"] as! Float
+            operations[opIndex].progress = newProgress / 100.0
+        }
+        else if messageTypeStr == "completed" {
+            
+        }
+        else {
+            print("Invalid message type")
+            return
+        }
+    }
+    
+    
+    private func convertMessageToDict(messageObject: Any) -> Dictionary <String, Any> {
         //convert message payload into dicionary
         guard let msgString = messageObject as? String else {
             fatalError("Message not successfully converted to string")
@@ -42,7 +70,7 @@ class OperationsHandler {
     }
     
     // Searches the operation array and finds the operation with the same messageID
-    func findOperationIndex(messageId: Any?) -> Int {
+    private func findOperationIndex(messageId: Any?) -> Int {
         var foundOperationIndex : Int = 0
         
         let messageStr: String = messageId as! String
