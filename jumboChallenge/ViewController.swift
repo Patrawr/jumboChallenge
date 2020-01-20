@@ -25,17 +25,16 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         operationsTableView.dataSource = self
     }
     
-
+    // After view has loaded, with some delay, start some sample messages
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 0.5)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 0.5)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 0.6)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 0.6)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 0.7)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 0.7)
+        perform(#selector(startNewOperation), with: nil, afterDelay: 1)
+        perform(#selector(startNewOperation), with: nil, afterDelay: 1)
+        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
+        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
+        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
+        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
     }
-    
     
     
     func setupWebView() {
@@ -105,15 +104,5 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         
         webView.evaluateJavaScript("startOperation('\(id)')", completionHandler: nil)
     }
-    
-    
-    //MARK: Action Methods
-    @IBAction func jsTriggerTest(_ sender: UIButton) {
-        var opID = String(Int.random(in: 0..<1000000))
-        opID = opID + "jmb"
-        startNewOperation()
-    }
-    
-    
 }
 

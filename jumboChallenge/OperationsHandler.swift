@@ -21,10 +21,11 @@ class OperationsHandler {
     
     //MARK: Custom Methods
     func handleMessage(message: Any) -> IndexPath {
-        print(message)
-        
+        // Reads in json message and returns a dictionary
         let messageDict = convertMessageToDict(messageObject: message)
         let operationIndex = findOperationIndex(messageId: messageDict["id"])
+        
+        // Handles main logic of parsing the message and updating the datamodel appropriately
         parseMessageType(message: messageDict, opIndex: operationIndex)
         
         let newIndexPath = IndexPath(row: operationIndex, section: 0)
@@ -36,7 +37,6 @@ class OperationsHandler {
     private func parseMessageType(message: [String: Any?], opIndex: Int) {
         // Casting any? optional to useable string
         let messageTypeStr: String = message["message"] as! String
-        print("Message Type: \(messageTypeStr)")
         
         // Calculate new progress as a float for uiProgressView
         if messageTypeStr == "progress" {
@@ -45,6 +45,7 @@ class OperationsHandler {
             operations[opIndex].state = "In Progress..."
         }
             
+        // Handle completed message and update state, progressView appropriately
         else if messageTypeStr == "completed" {
             let stateStr : String = message["state"] as! String
             
@@ -67,7 +68,7 @@ class OperationsHandler {
     
     
     private func convertMessageToDict(messageObject: Any) -> Dictionary <String, Any> {
-        //convert message payload into dicionary
+        //convert json string message payload into dicionary
         guard let msgString = messageObject as? String else {
             fatalError("Message not successfully converted to string")
         }
