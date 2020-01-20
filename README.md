@@ -53,6 +53,9 @@ Where the view controller handles setting up all the views and display, the oper
 
  This all begins with the handleMessage function which in short: converts the JSON string to a dictionary, retrieves what index in the operations array the current message is meant for and then actually parses the struture of the JSON to determine what sort of data mutation to perform. Once this is all complete, a new IndexPath is calculated and returned to the view controller so that it may update the appropriate cell with the new data.
 
+## Testing
+ The operationHandler class was also where the majority of my testing took place. I implemented a button to use during runtime to trigger operations and catch any errors that may occur from receiving the json message from javascript to parsing it out and updating the data model. I also had helper fuctions that could fire off operations automatically, or preload data into a cell to see how my app handled it. These all could be scripted as unit tests to help find the application's edge cases when implemented on a larger scale.
+
 ## Challenges
 1. Figuring out when the javascript had been loaded and evaluated and the view had been presented
 
@@ -71,3 +74,5 @@ Because the dictionary is of type [String: Any] to accommodate the possible diff
 3. Separate setting up the table view into another class if possible, and use a delegate to communicate with the view controller; need to investigate if/how this is possible.
 
 4. Try to animate the progress bar rather than refreshing the table cell row. Currently it just refreshes the whole row in and looks like the progress bar is fading from state to the next. I would try to refine it to avoid that if possible and update the progress and other elements without that fade in-out animation look.
+
+5. Handle the parsing of the json and casting of data in the operationsHandler a bit cleaner. 
