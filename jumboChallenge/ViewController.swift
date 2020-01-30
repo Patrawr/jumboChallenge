@@ -51,7 +51,7 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "jumbo" {
             //call message handler to modify data model, based on message
-            let newIndexPath: IndexPath = opHandler.handleMessage(message: message.body)
+            let newIndexPath: IndexPath = IndexPath(row: opHandler.handleMessage(message: message.body), section: 0)
             
             //once message handler returns, update specific row in table it updated
             operationsTableView.reloadRows(at: [newIndexPath], with: .automatic )

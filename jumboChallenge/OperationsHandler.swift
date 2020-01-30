@@ -20,7 +20,7 @@ class OperationsHandler {
     
     
     //MARK: Custom Methods
-    func handleMessage(message: Any) -> IndexPath {
+    func handleMessage(message: Any) -> Int {
         // Reads in json message and returns a dictionary
         let messageDict = convertMessageToDict(messageObject: message)
         let operationIndex = findOperationIndex(messageId: messageDict["id"])
@@ -28,9 +28,7 @@ class OperationsHandler {
         // Handles main logic of parsing the message and updating the datamodel appropriately
         parseMessageType(message: messageDict, opIndex: operationIndex)
         
-        let newIndexPath = IndexPath(row: operationIndex, section: 0)
-        
-        return newIndexPath
+        return operationIndex
     }
     
     // Will parse key message to determine what type of message it is, i.e. "progress, completed"
@@ -78,7 +76,7 @@ class OperationsHandler {
         }
         
         let jsonString = try? JSONSerialization.jsonObject(with: data, options: [])
-        var messageDict = jsonString as! [String: Any]
+        let messageDict = jsonString as! [String: Any]
         
         return messageDict
     }
