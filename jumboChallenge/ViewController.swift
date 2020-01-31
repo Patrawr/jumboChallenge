@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDelegate {
+class ViewController: UIViewController, WKScriptMessageHandler {
     //MARK: Properties
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var operationsTableView: UITableView!
@@ -21,23 +21,9 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         super.viewDidLoad()
         
         setupWebView()
+        webView.navigationDelegate = self
         operationsTableView.delegate = self
         operationsTableView.dataSource = self
-    }
-    
-    
-    func setupWebView() {
-        webView.configuration.userContentController.add(self, name: "jumbo")
-        webView.navigationDelegate = self
-        
-        // Loading HTML from bundle
-        let url = Bundle.main.resourceURL!.absoluteURL
-        let html = url.appendingPathComponent("index.html")
-        webView.loadFileURL(html, allowingReadAccessTo: url)
-    }
-    
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        startNewOperation()
     }
     
     
@@ -50,8 +36,8 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         }
     }
     
+    
     //MARK: Custom Functions
-  
     // Will create a new operation in the operation Handler's array and call
     // startOperation() JS function to start messages
     @objc func startNewOperation() {
@@ -66,12 +52,11 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         
         webView.evaluateJavaScript("startOperation('\(id)')", completionHandler: nil)
     }
-    
-    
 }
 
 
- //MARK: Setting Up Tableview
+
+ //MARK: Setting Up Tableview and associated methods
 extension ViewController : UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -109,6 +94,26 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
         if let cell = tableView.cellForRow(at: indexPath) as? MessageProgressTableViewCell {
             cell.operationProgressView.setProgress(opHandler.operations[index].progress, animated: true)
             cell.operationStateLabel.text = opHandler.operations[index].state
+        }
+    }
+}
+
+
+//MARK: Webview Config and methods
+extension ViewController: WKNavigationDelegate {
+    func setupWebView() {
+        webView.configuration.userContentController.add(self, name: "jumbo")
+        
+        // Loading HTML from bundle
+        let url = Bundle.main.resourceURL!.absoluteURL
+        let html = url.appendingPathComponent("index.html")
+        webView.loadFileURL(html, allowingReadAccessTo: url)
+    }
+    
+    //called after webview finishes loading, will trigger off messages to start
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        for _ in 0..<300 {
+            startNewOperation()
         }
     }
 }
