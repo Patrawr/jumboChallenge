@@ -107,14 +107,14 @@ class OperationsHandler {
     
     // Creates a new operation and adds it to the internal array for tracking. Also, returns an index path so the
     // uiTableView knows where to insert a new row
-    func startOperation(id: String) -> IndexPath {
+    func startOperation(id: String) -> Int {
         guard let newOperation = Operation(name: id, progress: 0, state: "") else {
             fatalError("Starting new operation with id \(id) failed")
         }
         
-        let newIndexPath = IndexPath(row: operations.count, section: 0)
+        let newOperationIndex: Int = operations.count
         operations.append(newOperation)
         
-        return newIndexPath
+        return newOperationIndex
     }
 }

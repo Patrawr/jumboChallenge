@@ -45,9 +45,9 @@ class ViewController: UIViewController, WKScriptMessageHandler {
         var id = String(Int.random(in: 0..<1000000))
         id = id + "jmb"
         
-        // Getting indexPath returned from startOperation and using it to insert a new row
+        // Getting index returned from startOperation and using it to generate a new indexPath and insert a new row
         // into the table
-        let newIndexPath = opHandler.startOperation(id: id)
+        let newIndexPath = IndexPath(row: opHandler.startOperation(id: id), section: 0)
         operationsTableView.insertRows(at: [newIndexPath], with: .automatic)
         
         webView.evaluateJavaScript("startOperation('\(id)')", completionHandler: nil)
