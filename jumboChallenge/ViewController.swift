@@ -112,7 +112,7 @@ extension ViewController: WKNavigationDelegate {
     
     //called after webview finishes loading, will trigger off messages to start
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        for _ in 0..<300 {
+        for _ in 0..<50 {
             startNewOperation()
         }
     }

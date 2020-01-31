@@ -38,9 +38,10 @@ class OperationsHandler {
         
         // Calculate new progress as a float for uiProgressView
         if messageTypeStr == "progress" {
-            let newProgress : Float = message["progress"] as? Float ?? 0
+            if let newProgress : Float = message["progress"] as? Float {
             operations[opIndex].progress = newProgress / 100.0
             operations[opIndex].state = "In Progress..."
+            }
         }
             
         // Handle completed message and update state, progressView appropriately
@@ -56,10 +57,15 @@ class OperationsHandler {
             else if stateStr == "error" {
                 operations[opIndex].state = "❌"
             }
+            else {
+                print("Invalid state \(stateStr)")
+                return
+            }
         }
             
+            // log this message and skip if invalid
         else {
-            print("Invalid message type")
+            print("Invalid message type \(messageTypeStr)")
             return
         }
     }
@@ -76,7 +82,9 @@ class OperationsHandler {
         }
         
         let jsonString = try? JSONSerialization.jsonObject(with: data, options: [])
-        let messageDict = jsonString as! [String: Any]
+        guard let messageDict = jsonString as? [String: Any] else {
+            fatalError("Message \(data) not successfully converted to dictionary")
+        }
         
         return messageDict
     }
@@ -85,11 +93,12 @@ class OperationsHandler {
     private func findOperationIndex(messageId: Any?) -> Int {
         var foundOperationIndex : Int = 0
         
-        let messageStr: String = messageId as? String ?? ""
-        
-        for (index, operation) in operations.enumerated() {
-            if operation.name == messageStr {
-                foundOperationIndex = index
+        // if we can successfully unwrap the string, search for the index
+        if let messageStr: String = messageId as? String {
+            for (index, operation) in operations.enumerated() {
+                if operation.name == messageStr {
+                    foundOperationIndex = index
+                }
             }
         }
         
