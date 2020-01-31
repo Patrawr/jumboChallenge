@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDelegate, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDelegate {
     //MARK: Properties
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var operationsTableView: UITableView!
@@ -25,150 +25,19 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         operationsTableView.dataSource = self
     }
     
-    // After view has loaded, with some delay, start some sample messages
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.2)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-        perform(#selector(startNewOperation), with: nil, afterDelay: 1.4)
-    }
-    
     
     func setupWebView() {
         webView.configuration.userContentController.add(self, name: "jumbo")
+        webView.navigationDelegate = self
+        
         // Loading HTML from bundle
         let url = Bundle.main.resourceURL!.absoluteURL
         let html = url.appendingPathComponent("index.html")
         webView.loadFileURL(html, allowingReadAccessTo: url)
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        startNewOperation()
     }
     
     
@@ -181,7 +50,29 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         }
     }
     
-    //MARK: Setting Up Tableview
+    //MARK: Custom Functions
+  
+    // Will create a new operation in the operation Handler's array and call
+    // startOperation() JS function to start messages
+    @objc func startNewOperation() {
+        //generating a random string operation ID
+        var id = String(Int.random(in: 0..<1000000))
+        id = id + "jmb"
+        
+        // Getting indexPath returned from startOperation and using it to insert a new row
+        // into the table
+        let newIndexPath = opHandler.startOperation(id: id)
+        operationsTableView.insertRows(at: [newIndexPath], with: .automatic)
+        
+        webView.evaluateJavaScript("startOperation('\(id)')", completionHandler: nil)
+    }
+    
+    
+}
+
+
+ //MARK: Setting Up Tableview
+extension ViewController : UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -211,24 +102,6 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         return cell
     }
     
-    
-    //MARK: Custom Functions
-  
-    // Will create a new operation in the operation Handler's array and call
-    // startOperation() JS function to start messages
-    @objc func startNewOperation() {
-        //generating a random string operation ID
-        var id = String(Int.random(in: 0..<1000000))
-        id = id + "jmb"
-        
-        // Getting indexPath returned from startOperation and using it to insert a new row
-        // into the table
-        let newIndexPath = opHandler.startOperation(id: id)
-        operationsTableView.insertRows(at: [newIndexPath], with: .automatic)
-        
-        webView.evaluateJavaScript("startOperation('\(id)')", completionHandler: nil)
-    }
-    
     // func to specifically views in a cell, rather than reloading the entire cell
     func updateCell(index: Int, tableView: UITableView) {
         let indexPath = IndexPath(row: index, section:0)
@@ -239,4 +112,3 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         }
     }
 }
-

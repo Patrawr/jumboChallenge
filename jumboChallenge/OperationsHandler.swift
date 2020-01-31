@@ -34,18 +34,18 @@ class OperationsHandler {
     // Will parse key message to determine what type of message it is, i.e. "progress, completed"
     private func parseMessageType(message: [String: Any?], opIndex: Int) {
         // Casting any? optional to useable string
-        let messageTypeStr: String = message["message"] as! String
+        let messageTypeStr: String = message["message"] as? String ?? ""
         
         // Calculate new progress as a float for uiProgressView
         if messageTypeStr == "progress" {
-            let newProgress : Float = message["progress"] as! Float
+            let newProgress : Float = message["progress"] as? Float ?? 0
             operations[opIndex].progress = newProgress / 100.0
             operations[opIndex].state = "In Progress..."
         }
             
         // Handle completed message and update state, progressView appropriately
         else if messageTypeStr == "completed" {
-            let stateStr : String = message["state"] as! String
+            let stateStr : String = message["state"] as? String ?? ""
             
             if stateStr == "success" {
                 // We've completed successfully so set progressView to 100%
@@ -85,7 +85,7 @@ class OperationsHandler {
     private func findOperationIndex(messageId: Any?) -> Int {
         var foundOperationIndex : Int = 0
         
-        let messageStr: String = messageId as! String
+        let messageStr: String = messageId as? String ?? ""
         
         for (index, operation) in operations.enumerated() {
             if operation.name == messageStr {
