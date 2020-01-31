@@ -177,11 +177,7 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "jumbo" {
             //call message handler to modify data model, based on message
-            let newIndexPath: IndexPath = IndexPath(row: opHandler.handleMessage(message: message.body), section: 0)
-            
-            updateProgress(index: newIndexPath.row, tableView: operationsTableView)
-            //once message handler returns, update specific row in table it updated
-//            operationsTableView.reloadRows(at: [newIndexPath], with: .none )
+            updateCell(index: opHandler.handleMessage(message: message.body), tableView: operationsTableView)
         }
     }
     
@@ -233,12 +229,12 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         webView.evaluateJavaScript("startOperation('\(id)')", completionHandler: nil)
     }
     
-    // func to specifically update progress, rather than whole row
-    func updateProgress(index: Int, tableView: UITableView) {
+    // func to specifically views in a cell, rather than reloading the entire cell
+    func updateCell(index: Int, tableView: UITableView) {
         let indexPath = IndexPath(row: index, section:0)
         
         if let cell = tableView.cellForRow(at: indexPath) as? MessageProgressTableViewCell {
-            cell.operationProgressView.progress = opHandler.operations[index].progress
+            cell.operationProgressView.setProgress(opHandler.operations[index].progress, animated: true)
             cell.operationStateLabel.text = opHandler.operations[index].state
         }
     }
