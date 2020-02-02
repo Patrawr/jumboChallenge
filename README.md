@@ -1,6 +1,25 @@
 # Jumbo Challenge
 ##### Author: Patrick Wawrzoszek, January 2020
 
+## Changes
+### v1.1.0
+#### Fixes
+- Created tests to test operation creation, tear down and handling of various types of messages (invalid, valid, mixed)
+- IndexPath creation is now handled in the viewController, the OperationHandler now just returns an index
+- webView didFinish now implemented and operations are successfully kicked off once web view fully loads, rather than artificially delayed; was not working previously because I failed to set the webViewNavigationDelegate
+- CoreData stubs cleaned up
+- Force casting has been replaced with safely unwrapping, will no longer crash code, rather log and skip invalid messages
+- reloadRow has been replaced with custom updateCell method that just updates the individual views within the cell rather than reloading the whole thing, scrolling is smooth now with lots of simultaneous operations
+- Implementation of a dispatch queue to handle message transformation separate from main thread where UI was being updated
+- I believe this was the cause of why sometimes the tableView wouldn’t update
+    - Enough simultaneous operations would have the effect of freezing the UI due to blocking the main thread with message processing
+
+#### Other Improvements
+- ViewController slimmed down
+    - Tableview delegates separated into their own file via extension
+    - Webkit navigation delegates separated into their own file via extension
+- ProgressView now animating during updates
+
 ## Overview
 The challenge was to design a native iOS app that communicates with javascript in a webview, can trigger javascript functions in said webview and receive and handle messages from that same webview. It then visually displays these messages, which describe "operations" in the native app, concurrently.
 
