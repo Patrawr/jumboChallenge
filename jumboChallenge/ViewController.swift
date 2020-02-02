@@ -14,6 +14,7 @@ class ViewController: UIViewController, WKScriptMessageHandler {
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var operationsTableView: UITableView!
     var opHandler = OperationsHandler()
+    let messageQueue = DispatchQueue(label: "messageQueue")
     
     
     //MARK: Setup
@@ -31,8 +32,15 @@ class ViewController: UIViewController, WKScriptMessageHandler {
     // "jumbo"
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "jumbo" {
-            //call message handler to modify data model, based on message
-            updateCell(index: opHandler.handleMessage(message: message.body), tableView: operationsTableView)
+            
+            messageQueue.async {
+                //call message handler to modify data model, based on message
+                let newIndex = self.opHandler.handleMessage(message: message.body)
+                
+                DispatchQueue.main.async {
+                    self.updateCell(index: newIndex, tableView: self.operationsTableView)
+                }
+            }
         }
     }
     
@@ -112,7 +120,7 @@ extension ViewController: WKNavigationDelegate {
     
     //called after webview finishes loading, will trigger off messages to start
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        for _ in 0..<10 {
+        for _ in 0..<1000 {
             startNewOperation()
         }
     }
