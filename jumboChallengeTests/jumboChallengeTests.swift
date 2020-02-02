@@ -40,8 +40,8 @@ class jumboChallengeTests: XCTestCase {
         let mockName: String
         
         init(name: String, body: Any) {
-            mockName = name
-            mockBody = body
+            self.mockName = name
+            self.mockBody = body
         }
         
         override var body: Any {

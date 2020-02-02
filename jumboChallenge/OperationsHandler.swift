@@ -61,8 +61,6 @@ class OperationsHandler {
                 print("Invalid state \(stateStr)")
                 return
             }
-//            dump(operations[opIndex])
-//            dump(message)
         }
             
             // log this message and skip if invalid

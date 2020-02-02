@@ -11,6 +11,8 @@
 		DF4DD86123D3C2C90088B381 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4DD86023D3C2C90088B381 /* Operation.swift */; };
 		DF4DD86723D4ED740088B381 /* OperationsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4DD86623D4ED740088B381 /* OperationsHandler.swift */; };
 		DF827D3A23E27E42002D86C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF827D3923E27E42002D86C6 /* SceneDelegate.swift */; };
+		DF827D3C23E74463002D86C6 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF827D3B23E74463002D86C6 /* TableViewDelegate.swift */; };
+		DF827D3E23E745A1002D86C6 /* WKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF827D3D23E745A1002D86C6 /* WKDelegate.swift */; };
 		DF98BA7E23CFEE8F00DBBF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF98BA7D23CFEE8F00DBBF8E /* AppDelegate.swift */; };
 		DF98BA8223CFEE8F00DBBF8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF98BA8123CFEE8F00DBBF8E /* ViewController.swift */; };
 		DF98BA8523CFEE8F00DBBF8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF98BA8323CFEE8F00DBBF8E /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 		DF4DD86023D3C2C90088B381 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		DF4DD86623D4ED740088B381 /* OperationsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsHandler.swift; sourceTree = "<group>"; };
 		DF827D3923E27E42002D86C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DF827D3B23E74463002D86C6 /* TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
+		DF827D3D23E745A1002D86C6 /* WKDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKDelegate.swift; sourceTree = "<group>"; };
 		DF98BA7A23CFEE8F00DBBF8E /* jumboChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jumboChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF98BA7D23CFEE8F00DBBF8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF98BA8123CFEE8F00DBBF8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 			children = (
 				DF98BA7D23CFEE8F00DBBF8E /* AppDelegate.swift */,
 				DF98BA8123CFEE8F00DBBF8E /* ViewController.swift */,
+				DF827D3D23E745A1002D86C6 /* WKDelegate.swift */,
+				DF827D3B23E74463002D86C6 /* TableViewDelegate.swift */,
 				DF4DD86623D4ED740088B381 /* OperationsHandler.swift */,
 				DF827D3923E27E42002D86C6 /* SceneDelegate.swift */,
 				DF4DD86023D3C2C90088B381 /* Operation.swift */,
@@ -280,7 +286,9 @@
 				DF4DD85F23D3BBFD0088B381 /* MessageProgressTableViewCell.swift in Sources */,
 				DF4DD86723D4ED740088B381 /* OperationsHandler.swift in Sources */,
 				DF98BA7E23CFEE8F00DBBF8E /* AppDelegate.swift in Sources */,
+				DF827D3C23E74463002D86C6 /* TableViewDelegate.swift in Sources */,
 				DF98BA8823CFEE8F00DBBF8E /* jumboChallenge.xcdatamodeld in Sources */,
+				DF827D3E23E745A1002D86C6 /* WKDelegate.swift in Sources */,
 				DF4DD86123D3C2C90088B381 /* Operation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
