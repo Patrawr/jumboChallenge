@@ -7,28 +7,102 @@
 //
 
 import XCTest
+import WebKit
 @testable import jumboChallenge
 
 class jumboChallengeTests: XCTestCase {
+    var opHandlerTest: OperationsHandler!
+    
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        opHandlerTest = OperationsHandler()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        opHandlerTest = nil
+        super.tearDown()
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testEmptyMessage() {
+        let emptyMessageOperation = Operation(name: "", progress: 0, state: "")
+        XCTAssertNil(emptyMessageOperation)
+        
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testInvalidProgress() {
+        let invalidProgressOperation = Operation(name: "invalidProgressTest", progress: -1, state: "")
+        XCTAssertNil(invalidProgressOperation)
+    }
+    
+    class MockOperationMessage : WKScriptMessage {
+        let mockBody: Any
+        let mockName: String
+        
+        init(name: String, body: Any) {
+            mockName = name
+            mockBody = body
+        }
+        
+        override var body: Any {
+            return mockBody
+        }
+        
+        override var name: String {
+            return mockName
         }
     }
+    
+    // Test that an operation has been successfully started
+    func testStartOperationName() {
+        var id = String(Int.random(in: 0..<1000000))
+        id = id + "jmb"
+        
+        opHandlerTest.startOperation(id: id)
+        XCTAssertEqual(opHandlerTest.operations[0].name, id, "Message ID started does not match in opHandler")
+    }
+    
+    // Check if the message handler receives a valid message
+    func testOperationMessageHandlerValid() {
+        var id = String(Int.random(in: 0..<1000000))
+        id = id + "jmb"
+        
+        opHandlerTest.startOperation(id: id)
+        
+        // Generate mock message and send to message handler
+        let mockMessage = MockOperationMessage(name: "jumbo", body: "{\"id\":\"\(id)\",\"message\":\"progress\",\"progress\":50}")
+        opHandlerTest.handleMessage(message: mockMessage.mockBody)
+        
+        XCTAssertEqual(opHandlerTest.operations[0].progress, 0.5, "Progress not updated correctly")
+    }
+    
+    // Check if the message handler handles a malformed message
+    func testOperationMessageHandlerMalformedMessage() {
+        var id = String(Int.random(in: 0..<1000000))
+        id = id + "jmb"
+        
+        opHandlerTest.startOperation(id: id)
+        
+        // Generate mock message and send to message handler
+        let mockMessage = MockOperationMessage(name: "jumbo", body: "{\"id\":\"\(id)\",\"message\":\"\",\"progress\":10}")
+        opHandlerTest.handleMessage(message: mockMessage.mockBody)
+        
+        XCTAssertEqual(opHandlerTest.operations[0].progress, 0, "Invalid Message Modified Progress when it shouldn't have")
+    }
+    
+    // Check if the message handler handles an invalid message properly
+    func testOperationMessageHandlerInvalidMessage() {
+        var id = String(Int.random(in: 0..<1000000))
+        id = id + "jmb"
+        
+        opHandlerTest.startOperation(id: id)
+        
+        // Generate mock message and send to message handler
+        let mockMessage = MockOperationMessage(name: "jumbo", body: "Invalid corrupted message")
+        opHandlerTest.handleMessage(message: mockMessage.mockBody)
+        
+        XCTAssertEqual(opHandlerTest.operations[0].progress, 0, "Invalid Message Modified Progress when it shouldn't have")
+    }
+
 
 }

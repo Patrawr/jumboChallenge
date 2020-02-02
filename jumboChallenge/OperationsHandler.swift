@@ -61,6 +61,8 @@ class OperationsHandler {
                 print("Invalid state \(stateStr)")
                 return
             }
+            dump(operations[opIndex])
+            dump(message)
         }
             
             // log this message and skip if invalid
@@ -73,17 +75,12 @@ class OperationsHandler {
     
     private func convertMessageToDict(messageObject: Any) -> Dictionary <String, Any> {
         //convert json string message payload into dicionary
-        guard let msgString = messageObject as? String else {
-            fatalError("Message not successfully converted to string")
-        }
+        let msgString = messageObject as? String ?? ""
+        var messageDict : [String: Any] = [:]
         
-        guard let data: Data = msgString.data(using: .utf8) else {
-            fatalError("Message not successfully converted to data")
-        }
-        
-        let jsonString = try? JSONSerialization.jsonObject(with: data, options: [])
-        guard let messageDict = jsonString as? [String: Any] else {
-            fatalError("Message \(data) not successfully converted to dictionary")
+        if let data: Data = msgString.data(using: .utf8) {
+            let jsonString = try? JSONSerialization.jsonObject(with: data, options: [])
+            messageDict = jsonString as? [String: Any] ?? [:]
         }
         
         return messageDict
